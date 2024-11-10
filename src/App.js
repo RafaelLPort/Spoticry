@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderUnlogged } from './components/Header'; 
-import { Musicas } from './components/Musicas';
+import { Body } from './components/Body';
 import { Playlists } from './components/Playlists';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <HeaderUnlogged />
       <Playlists />
-      <Musicas />
+      <Body />
     </div>
   );
 }
