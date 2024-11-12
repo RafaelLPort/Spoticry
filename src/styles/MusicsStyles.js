@@ -5,9 +5,20 @@ const secondaryColor = '#1F1F1F' // CINZA MAIS CLARO
 const terciaryColor = '#373737'
 
 
-export const ContainerPlaylist = styled.div`
+export const ContainerMusics = styled.div`
+  // width: 100%;   
+  // height: 100vh;  
+  // display: column;
+  // justify-content: space-between;
+  // align-items: center;
+  // margim-rigth: 2%;
+  // margin: 2%;
+  // padding-bottom: 2%;
+  // position: relative;
+  // background-color: ${secondaryColor};
+
   margin: 2%;
-  width: 30%;
+  width: 70%;
   height: 100vh;
   border-radius: 15px;
   background-color: ${secondaryColor};

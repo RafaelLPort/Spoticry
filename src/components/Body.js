@@ -1,13 +1,13 @@
 import React from 'react';
-import { Musics } from './Musics';
-
+import { BodyMusics } from './BodyMusics';
+import { Playlists } from './Playlists';
 
 export function Body() {
-    return(
-        <div>
-            <Musics />
-        </div>
+    return (
+      <Body>
+        <Playlists/>
+        <BodyMusics/>
+      </Body>
+      
     );
-
-
-};
+  }
