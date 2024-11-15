@@ -1,11 +1,11 @@
 import React from 'react';
-import { ContainerMusics } from '../styles/MusicsStyles';
 
 export function Musics() {
-    return (
-      <ContainerMusics>
-          <h1>1111</h1>
-      </ContainerMusics>
-      
+    return(
+        <>
+            <h1>111111</h1>
+        </>
     );
-  }
+
+
+};

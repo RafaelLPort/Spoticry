@@ -1,11 +1,14 @@
-import { Home } from './pages/Home';
-import { LandingPage } from './pages/LandingPage';
+import React from 'react';
+import { HeaderUnlogged } from './components/Header'; 
+import { Body } from './components/Body';
+// import { Playlists } from './components/Playlists';
 
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
-      <LandingPage />
+      <HeaderUnlogged />
+      {/* <Playlists /> */}
+      <Body />
     </div>
   );
 }

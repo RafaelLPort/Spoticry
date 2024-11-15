@@ -16,7 +16,9 @@ export function HeaderUnlogged() {
         </Genero>
 
         <Ordem>
-        <option value="" disabled selected> Ord </option>
+        <option value="" disabled selected>
+          Ord
+        </option>
         <option value="ficticia1">Opção 1</option>
         <option value="ficticia2">Opção 2</option>
         </Ordem>

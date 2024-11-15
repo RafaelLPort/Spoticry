@@ -17,9 +17,9 @@ export const ContainerMusics = styled.div`
   // position: relative;
   // background-color: ${secondaryColor};
 
-  margin: 0 2%;
-  width: 100%;
-  height: 75vh;
+  margin: 2%;
+  width: 70%;
+  height: 100vh;
   border-radius: 15px;
   background-color: ${secondaryColor};
   display: flex;
