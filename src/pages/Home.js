@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderUnlogged } from '../components/Header';
+import { HeaderHome } from '../components/Header';
 import { Musics } from '../components/Musics';
 import { Playlists } from '../components/Playlists';
 import { Main } from '../styles/BodyStyles';
@@ -7,7 +7,7 @@ import { Main } from '../styles/BodyStyles';
 export default function Home() {
     return (
     <>
-        <HeaderUnlogged />
+        <HeaderHome />
         <Main>
             <Playlists />
             <Musics />

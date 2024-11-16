@@ -2,18 +2,21 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header, LoginButton, Pesquisa, Genero, Ordem } from '../styles/HeaderStyles'
 
-export function HeaderUnlogged() {
+export function HeaderHome() {
 
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/LandingPage');
+    navigate('/');
   };
+
+
+  // Trocar o botao de logout pelo icon e arrumar a responsividade dos objetos
+
 
   return (
     <Header>
-        <LoginButton onClick={handleButtonClick}>Login</LoginButton>
-        <LoginButton>Login</LoginButton>
+        <LoginButton onClick={handleButtonClick}> Logout </LoginButton>
 
         <Pesquisa type="text" placeholder="Pesquisar música..."></Pesquisa>
 

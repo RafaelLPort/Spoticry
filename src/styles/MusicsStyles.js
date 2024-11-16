@@ -22,7 +22,42 @@ export const ContainerMusics = styled.div`
   height: 75vh;
   border-radius: 15px;
   background-color: ${secondaryColor};
-  display: flex;
+  display: column;
   justify-content: space-between;
   padding: 15px;
 `;
+
+export const MusicCard = styled.div`
+
+  height: 320px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: ${terciaryColor};
+  display: column;
+
+`;
+
+
+
+
+
+
+// Div para quando for a playlist
+
+// export const DivMusics = styled.div`
+
+//   height: 90%;
+//   width: 100%;
+//   border-radius: 10px;
+//   background-color: ${terciaryColor};
+//   display: column;
+//   // justify-content: ;
+
+// // @media (max-width: 600px) {
+// //     max-width: 150px;
+// //     height: 250px;
+// //     padding: 15px;
+// //   }
+
+// `;
+

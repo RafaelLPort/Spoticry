@@ -17,12 +17,13 @@ import PhotoRafael from "../assets/imgs/PhotoRafael.png";
 // icone quando clicado volta ao topo
 
 export default function LandingPage() {
+  const divIntroRef = useRef(null);
   const divAboutRef = useRef(null);
   const divDevsRef = useRef(null);
 
   // Função para scroll suave
   const handleScroll = (e, sectionRef) => {
-    e.preventDefault(); // Impede o comportamento padrão do link
+    e.preventDefault(); 
     if (sectionRef.current) {
       sectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -31,20 +32,20 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/Home');
+    navigate('/Login');
   };
 
   return (
     <>
       <HeaderLanding>
-        <IconStyled src={IconWithName} alt="Icon Spoticry" />
+        <IconStyled src={IconWithName} onClick={(e) => handleScroll(e, divIntroRef)} alt="Icon Spoticry" />
         {/* Links com scroll suave para as seções */}
         <TextHeader href="#" onClick={(e) => handleScroll(e, divAboutRef)}>About</TextHeader>
         <TextHeader href="#" onClick={(e) => handleScroll(e, divDevsRef)}>Creators</TextHeader>
         <LoginButtonLanding onClick={handleButtonClick}>Login</LoginButtonLanding>
       </HeaderLanding>
 
-      <Espacamento></Espacamento>
+      <Espacamento ref={divIntroRef}></Espacamento>
       <DivTest>
         <H1>Spoticry transforms the way you enjoy and organize your music!</H1>
         <Text>

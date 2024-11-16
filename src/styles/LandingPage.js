@@ -12,6 +12,10 @@ export const IconStyled = styled.img`
   height: 45px;
   display: flex;
 
+  &:hover {
+    cursor: pointer;
+  }
+
 `;
 
 export const ImgExample = styled.img`
@@ -107,6 +111,11 @@ export const LoginButtonLanding = styled.button`
   font-size: 18px;
   font-weight: bold;
   color: white;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.15);
+  }
 `;
 
 export const DivTest = styled.div`
