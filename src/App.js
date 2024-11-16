@@ -1,15 +1,16 @@
 import React from 'react';
-import { HeaderUnlogged } from './components/Header'; 
-import { Body } from './components/Body';
-// import { Playlists } from './components/Playlists';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage'; // Caminho para o seu componente LandingPage
+import Home from './pages/Home'; // Ou qualquer outro componente de rota
 
 function App() {
   return (
-    <div className="App">
-      <HeaderUnlogged />
-      {/* <Playlists /> */}
-      <Body />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/Home" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -4,7 +4,7 @@ import { Musics } from '../components/Musics';
 import { Playlists } from '../components/Playlists';
 import { Main } from '../styles/BodyStyles';
 
-export function Home() {
+export default function Home() {
     return (
     <>
         <HeaderUnlogged />

@@ -6,12 +6,12 @@ const terciaryColor = '#373737'
 
 
 export const ContainerPlaylist = styled.div`
-  margin: 2%;
+  margin: 0 0 0 2%;
   width: 30%;
-  height: 100vh;
+  height: 75vh;
   border-radius: 15px;
   background-color: ${secondaryColor};
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 15px;
 `;
