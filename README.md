@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+# SpotiCry - Music and Playlist Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+**SpotiCry** is a web application for managing music and playlists. Users can create and edit their playlists, add and edit songs, as well as manage their playback preferences. The application uses **React** for the frontend, **Node.js** for the backend, and integrates with external APIs for data management. The interface is simple and interactive, with features for searching, filtering, and playing music.
 
-In the project directory, you can run:
+This README will detail the main components, features, and architecture of the system.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Login and Authentication**
+   - Users can log in using their email and password.
+   - JWT tokens are used for authentication and authorization.
+   - The JWT token is stored locally and verified to ensure the user is authenticated.
 
-### `npm test`
+2. **Music Management**
+   - The system supports CRUD operations for songs: **Create**, **Read**, **Update**, and **Delete**.
+   - Users can edit details such as song title, artist, and URL.
+   - Songs can be searched and ordered by defined criteria.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Playlist Management**
+   - Users can create, edit, and delete playlists.
+   - Playlists can be populated with songs, which can be added or removed easily.
+   - The system allows for detailed viewing of each playlist.
 
-### `npm run build`
+4. **Music Playback**
+   - Songs can be played directly on the site through an integrated player.
+   - The player supports play, pause, and display of playback controls.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here is an overview of the project structure:
 
-### `npm run eject`
+### Frontend (React)
+- **Components**: 
+  - **Header**: Contains the navigation, search bar, and logout button.
+  - **Login**: Handles user login and authentication.
+  - **Playlists**: Displays and manages playlists. It includes a search bar, list of playlists, and functionality for adding songs to playlists.
+  - **Musics**: Displays the songs and handles the logic for adding, editing, and deleting songs.
+  - **Modal**: A reusable modal component for displaying content like song details or playlists.
+  - **Player**: A React player for music playback, with controls for play/pause and volume adjustment.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **State Management**:
+  - The state is managed using React's `useState` and `useEffect` hooks.
+  - JWT tokens are stored in **localStorage** and used to fetch user-specific data (songs, playlists).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend (Node.js + Express)
+- **Authentication**:
+  - Users authenticate via JWT tokens, which are sent with each request to access protected routes (songs, playlists).
+  - The server validates the token to ensure that requests come from authenticated users.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **API Endpoints**:
+  - **Songs**: Allows for creating, updating, deleting, and fetching songs.
+  - **Playlists**: Handles creating, updating, and deleting playlists.
+  - **User**: Authenticates users via email and password and issues JWT tokens.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Libraries & Tools Used
+- **React**: For the frontend UI.
+- **React Router**: For navigation and routing between components.
+- **Axios**: For making HTTP requests to the backend API.
+- **JWT Decode**: For decoding the JWT token.
+- **Styled Components**: For styling the components with CSS-in-JS.
+- **Toastify**: For displaying toast notifications.
+- **React Player**: For music playback functionality.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Components Overview
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1. **Header**
+The `HeaderHome` component is responsible for displaying the navigation bar, search bar, and logout button. It also handles the sorting of songs by different criteria.
 
-### Code Splitting
+### 2. **Login**
+The `Login` component provides a form for users to log in using their email and password. If the user is already authenticated (i.e., has a valid JWT token), they are redirected to the **Home** page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. **Musics**
+The `Musics` component displays a list of songs. It allows users to add new songs, edit existing songs, and delete songs. Songs can be sorted by various criteria, such as title or artist.
 
-### Analyzing the Bundle Size
+### 4. **Playlists**
+The `Playlists` component displays a list of playlists created by the user. Users can search for playlists and view details of a specific playlist.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 5. **Modal**
+The `Modal` component is used to display pop-up windows for various actions, such as viewing song details or editing a playlist.
 
-### Making a Progressive Web App
+### 6. **Player**
+The `Player` component allows users to play songs directly from the app. It includes a React player that integrates with the music service, providing play/pause functionality.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Prerequisites
+- **Node.js** (version 14 or above)
+- **npm** or **yarn** (package manager)
 
-### Deployment
+### Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repository/spoticry.git
+   cd spoticry
+   ```
 
-### `npm run build` fails to minify
+2. **Install dependencies**:
+   For the frontend:
+   ```bash
+   cd frontend
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   For the backend:
+   ```bash
+   cd backend
+   npm install
+   ```
+
+3. **Start the server**:
+   - Backend:
+     ```bash
+     cd backend
+     npm start
+     ```
+
+   - Frontend:
+     ```bash
+     cd frontend
+     npm start
+     ```
+
+4. Open your browser and navigate to `http://localhost:3000` (or the relevant port) to start using the application.
+
+---
+
+## Authentication
+
+- **JWT Token**: The application uses JSON Web Tokens (JWT) for user authentication.
+  - On successful login, the backend generates a JWT token that is sent to the frontend.
+  - The token is stored in **localStorage** and is included in the headers of every API request to authenticate the user.
+
+---
+
+## Usage
+
+1. **Login**:
+   - Enter your email and password in the login form. On successful authentication, you will be redirected to the **Home** page.
+   - If a token is already stored and is valid, you will be automatically logged in.
+
+2. **Managing Songs**:
+   - Navigate to the **Musics** page to add, update, or delete songs.
+   - You can also search for songs and filter them based on different criteria.
+
+3. **Managing Playlists**:
+   - On the **Playlists** page, you can create new playlists, add songs to existing playlists, and view the details of a playlist.
+   
+4. **Playing Music**:
+   - On the **Musics** page or **Playlist** details page, you can click on the **Play** button to start playing a song.
+   - The player will appear at the bottom, allowing you to play/pause the song.
+
+---
+
+## Contribution
+
+1. Fork the repository and create a new branch.
+2. Make your changes and ensure tests are passing.
+3. Submit a pull request with a detailed description of your changes.
+
+---
+
+## License
+
+The MIT License (MIT)
+Copyright © 2024 <copyright holders> < Lucas Picanço, Rafael Portugal e Marco Decco>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
