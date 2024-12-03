@@ -1,5 +1,12 @@
 # SpotiCry - Music and Playlist Management System
 
+<img src="src/assets/imgs/IconWithName.png" alt="Logo do Projeto" width="300"/>
+
+## 🔗 Access the Site
+
+[Spoticry](https://zingy-cannoli-dbb225.netlify.app/)
+
+
 ## 📄 Description
 
 **SpotiCry** is a web application for managing music and playlists. Users can create and edit their playlists, add and edit songs, as well as manage their playback preferences. The application uses **React** for the frontend, **Node.js** for the backend, and integrates with external APIs for data management. The interface is simple and interactive, with features for searching, filtering, and playing music.
