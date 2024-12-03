@@ -67,10 +67,7 @@ export function SongDetails({ isOpen, closeModal, songId }) {
       ) : (
     <Modal isOpen={isOpen} closeModal={handleCloseModal}>
       <AllDescItems>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {loading ? (
-          <p>Carregando os detalhes da música...</p>
-        ) : songDetails ? (
+         {songDetails ? (
           <AllDetailsItems>
             {songDetails.url && (
               <DetailsThumb
@@ -84,12 +81,9 @@ export function SongDetails({ isOpen, closeModal, songId }) {
             <strong>{songDetails.title || 'Não informado'}</strong>
             <p>{songDetails.artist || 'Não informado'}</p>
             </DetailsItems>
-            
-
-           
           </AllDetailsItems>
         ) : (
-          toast.error(' Os detalhes da música não estão disponíveis.')
+          null
         )}
       </AllDescItems>
     </Modal>
