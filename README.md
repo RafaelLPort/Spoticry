@@ -4,7 +4,7 @@
 
 ## 🔗 Access the Site
 
-[Spoticry](https://zingy-cannoli-dbb225.netlify.app/)
+[Spoticry](https://statuesque-conkies-98ce0c.netlify.app/)
 
 
 ## 📄 Description
