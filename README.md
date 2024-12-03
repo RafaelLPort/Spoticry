@@ -1,6 +1,6 @@
 # SpotiCry - Music and Playlist Management System
 
-## Description
+## 📄 Description
 
 **SpotiCry** is a web application for managing music and playlists. Users can create and edit their playlists, add and edit songs, as well as manage their playback preferences. The application uses **React** for the frontend, **Node.js** for the backend, and integrates with external APIs for data management. The interface is simple and interactive, with features for searching, filtering, and playing music.
 
@@ -8,7 +8,7 @@ This README will detail the main components, features, and architecture of the s
 
 ---
 
-## Features
+## ✨ Features
 
 1. **Login and Authentication**
    - Users can log in using their email and password.
@@ -31,9 +31,72 @@ This README will detail the main components, features, and architecture of the s
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 Here is an overview of the project structure:
+
+```bash
+/src
+├── /assets
+│   └── # Folder for images
+│
+├── /components
+│   ├── AddSongToPlaylist.js         # Component to add a song to a playlist
+│   ├── AllPlaylists.js              # Displays all playlists
+│   ├── BodyHome.js                  # Main body of the home page
+│   ├── CreatePlaylist.js            # Component to create a new playlist
+│   ├── CreateSong.js                # Component to create a new song
+│   ├── DeletePlaylist.js            # Component to delete a playlist
+│   ├── DeleteSong.js                # Component to delete a song
+│   ├── DeleteSongFromPlaylist.js    # Component to remove a song from a playlist
+│   ├── EditPlaylist.js              # Component to edit a playlist
+│   ├── EditSong.js                  # Component to edit a song
+│   ├── Header.js                    # Page header component
+│   ├── Modal.js                     # Modal to display song or playlist details
+│   ├── Musics.js                    # Displays the list of songs
+│   ├── onOrderChange.js             # Handles changes in song order
+│   ├── OpenPlaylist.js              # Component to open and view a playlist
+│   ├── Playlists.js                 # Displays individual playlists
+│   └── SongDetails.js               # Displays details of a song
+│
+├── /contexts
+│   └── SongDetailsContext.js        # Context for managing song details state
+│
+├── /pages
+│   ├── Home.js                      # Home page component
+│   ├── LandingPage.js               # Landing page component
+│   └── Login.js                     # Login page component
+│
+├── /services
+│   ├── fetchSongById.js             # Fetches a song by its ID
+│   └── fetchSongs.js                # Fetches a list of songs
+│
+├── /styles
+│   ├── AddSongToPlaylistStyles.js   # Styles for AddSongToPlaylist component
+│   ├── AllPlaylistsStyles.js        # Styles for AllPlaylists component
+│   ├── BodyStyles.js                # Styles for BodyHome component
+│   ├── CreatePlaylistStyles.js      # Styles for CreatePlaylist component
+│   ├── CreateSongStyles.js          # Styles for CreateSong component
+│   ├── EditPlaylistStyles.js        # Styles for EditPlaylist component
+│   ├── EditSongStyles.js            # Styles for EditSong component
+│   ├── HeaderStyles.js              # Styles for Header component
+│   ├── LandingPageStyles.js         # Styles for LandingPage component
+│   ├── LoginStyles.js               # Styles for Login component
+│   ├── ModalStyles.js               # Styles for Modal component
+│   ├── MusicsStyles.js              # Styles for Musics component
+│   ├── OpenPlaylistStyles.js        # Styles for OpenPlaylist component
+│   └── PlaylistsStyles.js           # Styles for Playlists component
+│
+├── /utils
+│   ├── decodeJWT.js                 # Decodes a JWT token
+│   ├── getYouTubeThumbnail.js       # Retrieves a YouTube video thumbnail
+│   ├── LoadingText.js               # Displays a loading text or animation
+│   └── Player.js                    # Audio player component
+│
+└── App.js                           # Main application component
+```
+
+## 💻 Technologies Used
 
 ### Frontend (React)
 - **Components**: 
@@ -69,29 +132,7 @@ Here is an overview of the project structure:
 
 ---
 
-## Components Overview
-
-### 1. **Header**
-The `HeaderHome` component is responsible for displaying the navigation bar, search bar, and logout button. It also handles the sorting of songs by different criteria.
-
-### 2. **Login**
-The `Login` component provides a form for users to log in using their email and password. If the user is already authenticated (i.e., has a valid JWT token), they are redirected to the **Home** page.
-
-### 3. **Musics**
-The `Musics` component displays a list of songs. It allows users to add new songs, edit existing songs, and delete songs. Songs can be sorted by various criteria, such as title or artist.
-
-### 4. **Playlists**
-The `Playlists` component displays a list of playlists created by the user. Users can search for playlists and view details of a specific playlist.
-
-### 5. **Modal**
-The `Modal` component is used to display pop-up windows for various actions, such as viewing song details or editing a playlist.
-
-### 6. **Player**
-The `Player` component allows users to play songs directly from the app. It includes a React player that integrates with the music service, providing play/pause functionality.
-
----
-
-## Installation
+## 📦 Installation
 
 ### Prerequisites
 - **Node.js** (version 14 or above)
@@ -135,7 +176,7 @@ The `Player` component allows users to play songs directly from the app. It incl
 
 ---
 
-## Authentication
+## 🔑 Authentication
 
 - **JWT Token**: The application uses JSON Web Tokens (JWT) for user authentication.
   - On successful login, the backend generates a JWT token that is sent to the frontend.
@@ -143,7 +184,7 @@ The `Player` component allows users to play songs directly from the app. It incl
 
 ---
 
-## Usage
+## 📖 Usage
 
 1. **Login**:
    - Enter your email and password in the login form. On successful authentication, you will be redirected to the **Home** page.
@@ -162,7 +203,7 @@ The `Player` component allows users to play songs directly from the app. It incl
 
 ---
 
-## Contribution
+## 🤝 Contribution
 
 1. Fork the repository and create a new branch.
 2. Make your changes and ensure tests are passing.
@@ -170,7 +211,7 @@ The `Player` component allows users to play songs directly from the app. It incl
 
 ---
 
-## License
+## 📝 License
 
 The MIT License (MIT)
 Copyright © 2024 <copyright holders> < Lucas Picanço, Rafael Portugal e Marco Decco>
