@@ -8,6 +8,7 @@ export const AddSongLabel = styled.label`
 `;
 
 export const AddSongsItems = styled.div`
+gap: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
