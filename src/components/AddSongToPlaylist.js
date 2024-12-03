@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';  // Importa o método toast
 import 'react-toastify/dist/ReactToastify.css';  // Importa o estilo do Toastify
-import { fetchSongs } from '../utils/fetchSongs'; // Importando o util fetchSongs
+import { fetchSongs } from '../services/fetchSongs'; // Importando o util fetchSongs
 import { AddSongLabel, AddSongsItems, Button } from '../styles/AddSongToPlaylistStyles'
 import AddSongIcon from '../assets/Icons/CreateSong.png'
 

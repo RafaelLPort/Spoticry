@@ -3,7 +3,7 @@ import { Modal } from './Modal';
 import { DeleteSongFromPlaylist } from './DeleteSongFromPlaylist';
 import { DeletePlaylist } from './DeletePlaylist';
 import { AddSongToPlaylist } from './AddSongToPlaylist';
-import { fetchSongById } from '../utils/fetchSongById';
+import { fetchSongById } from '../services/fetchSongById';
 import { EditPlaylist } from './EditPlaylist';
 import { ButtonsDiv, Buttons, ContentDiv, SongDetails, SongDiv, DeleteSongPlaylistIcon, PlaySongButton, SongThumb } from '../styles/OpenPlaylistStyles'
 import EditPlaylistIcon from '../assets/Icons/EditButton.png'
