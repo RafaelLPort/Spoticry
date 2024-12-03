@@ -33,7 +33,7 @@ export const Pesquisa = styled.input`
   border-radius: 15px;
   box-sizing: border-box;
   text-align: left;
-  margin: 0px 10%;
+  margin: 0px 18%;
 
   &::placeholder{
   color: #D0D0D0;
@@ -61,3 +61,35 @@ export const Ordem = styled.select`
   font-size: 20px;
   color: white;
 `;
+
+export const CreateMusicButton = styled.button`
+  background-color: #7933ae;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+export const LogoutButton = styled.button`
+  background-color: ${secondaryColor};
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+
+  img {
+    width: 50px;  /* Ajuste o tamanho da imagem */
+    height: 50px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`
