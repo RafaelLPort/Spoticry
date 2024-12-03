@@ -101,7 +101,7 @@ The `Player` component allows users to play songs directly from the app. It incl
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-repository/spoticry.git
+   git clone https://github.com/RafaelLPort/Spoticry.git
    cd spoticry
    ```
 
