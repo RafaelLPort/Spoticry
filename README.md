@@ -1,6 +1,6 @@
 # SpotiCry - Music and Playlist Management System
 
-![Logo do Projeto](src/assets/imgs/IconWithName.png)
+<img src="src/assets/imgs/IconWithName.png" alt="Logo do Projeto" width="300"/>
 
 ## 🔗 Access the Site
 
