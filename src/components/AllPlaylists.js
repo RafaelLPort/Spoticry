@@ -29,9 +29,7 @@ export function AllPlaylists() {
   const [currentPage, setCurrentPage] = useState(1);  
   const [playlistsPerPage] = useState(10);  
   const [isModalOpen, setIsModalOpen] = useState(false);  
-  const [modalSongs, setModalSongs] = useState([]);  
   const [selectedPlaylist, setSelectedPlaylist] = useState(null);  
-  const [selectedSong, setSelectedSong] = useState(null);
   const [songsInPlaylist, setSongsInPlaylist] = useState([]);
 
   // Função para abrir o modal com detalhes das músicas

@@ -11,7 +11,7 @@ export function DeleteSongFromPlaylist({ playlistId, songId, onDeleteSuccess }) 
   const handleDeleteSong = async () => {
     const token = localStorage.getItem('authToken');
     if (!token) {
-      setError('Você precisa estar logado para deletar músicas.');
+      toast.error('Você precisa estar logado para deletar músicas.');
       return;
     }
 
@@ -45,15 +45,6 @@ export function DeleteSongFromPlaylist({ playlistId, songId, onDeleteSuccess }) 
 
   return (
     <div>
-      {error && (
-        <p role="alert" aria-live="assertive" style={{ color: 'red' }}>
-          {error}
-        </p>
-      )}
-
-      {(
-        <p aria-live="polite" style={{ color: 'green' }} />
-      )}
 
       <DeleteSongIcon 
         onClick={handleDeleteSong}

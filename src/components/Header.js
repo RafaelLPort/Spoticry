@@ -10,7 +10,6 @@ export function HeaderHome({ onSongCreated, onOrderChange, onViewChange }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Estados para gerenciar os valores selecionados
-  const [genero, setGenero] = useState('');
   const [ordem, setOrdem] = useState('');
 
   const handleLogout = () => {

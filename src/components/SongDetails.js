@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';  // Importa o estilo do Toastify
 
 export function SongDetails({ isOpen, closeModal, songId }) {
   const [songDetails, setSongDetails] = useState(null);
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   // Função para buscar os detalhes da música
@@ -44,7 +43,6 @@ export function SongDetails({ isOpen, closeModal, songId }) {
       fetchSongById(songId).then((data) => {
         if (data) {
           setSongDetails(data); // Atualiza o estado com os detalhes da música
-          setError('');
         }
         setLoading(false); // Encerra o estado de carregamento
       });
@@ -54,7 +52,6 @@ export function SongDetails({ isOpen, closeModal, songId }) {
   // Função para fechar a modal e resetar o estado
   const handleCloseModal = () => {
     setSongDetails(null); // Reseta os detalhes
-    setError(''); // Limpa mensagens de erro
     setLoading(false); // Encerra qualquer estado de carregamento
     closeModal(); // Fecha a modal
   };

@@ -11,15 +11,11 @@ import 'react-toastify/dist/ReactToastify.css';  // Importa o estilo do Toastify
 export function EditPlaylist({ isOpen, closeModal, playlistId, playlistName, onPlaylistUpdated,  playlistDescription }) {
   const [name, setName] = useState(playlistName); // Estado para o nome da playlist
   const [description, setDescription] = useState(playlistDescription);
-  const [error, setError] = useState(''); // Estado para mensagens de erro
-  const [message, setMessage] = useState(''); // Estado para mensagens de sucesso
   const [loading, setLoading] = useState(false); // Estado para controle de carregamento
 
   // Função para atualizar a playlist
   const handleEditPlaylist = async () => {
     setLoading(true);
-    setError('');
-    setMessage('');
 
     if (!name.trim()) {
       toast.error('O nome da playlist não pode estar vazio!');
