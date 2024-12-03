@@ -8,8 +8,9 @@ import { EditPlaylistH1, EditPlaylistNameInput, SaveEditButton } from '../styles
 import { toast } from 'react-toastify';  // Importa o método toast
 import 'react-toastify/dist/ReactToastify.css';  // Importa o estilo do Toastify
 
-export function EditPlaylist({ isOpen, closeModal, playlistId, playlistName, onPlaylistUpdated }) {
+export function EditPlaylist({ isOpen, closeModal, playlistId, playlistName, onPlaylistUpdated,  playlistDescription }) {
   const [name, setName] = useState(playlistName); // Estado para o nome da playlist
+  const [description, setDescription] = useState(playlistDescription);
   const [error, setError] = useState(''); // Estado para mensagens de erro
   const [message, setMessage] = useState(''); // Estado para mensagens de sucesso
   const [loading, setLoading] = useState(false); // Estado para controle de carregamento
@@ -26,6 +27,12 @@ export function EditPlaylist({ isOpen, closeModal, playlistId, playlistName, onP
       return;
     }
 
+    if (!description.trim()) {
+      toast.error('A descrição da playlist não pode estar vazio!');
+      setLoading(false);
+      return;
+    }
+
     const token = localStorage.getItem('authToken');
     if (!token) {
       toast.error('Você precisa estar logado para editar a playlist.');
@@ -36,7 +43,7 @@ export function EditPlaylist({ isOpen, closeModal, playlistId, playlistName, onP
     try {
       const response = await axios.patch(
         `https://mqjnto3qw2.execute-api.us-east-1.amazonaws.com/default/playlist/${playlistId}`,
-        { name },
+        { name, description },
         {
           headers: {
             Authorization: `${token}`,
@@ -60,13 +67,12 @@ export function EditPlaylist({ isOpen, closeModal, playlistId, playlistName, onP
   useEffect(() => {
     if (isOpen) {
       setName(playlistName); // Atualiza o nome da playlist quando a modal abrir
+      setDescription(playlistDescription)
     }
-  }, [isOpen, playlistName]);
+  }, [isOpen, playlistName, playlistDescription]);
 
   return (
     <Modal isOpen={isOpen} closeModal={closeModal} aria-labelledby="edit-playlist-modal" role="dialog">
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {message && <p style={{ color: 'green' }}>{message}</p>}
 
       <AddSongsItems>
       <ImgCreatePlaylist src={IconEditPlaylist} alt="Ícone de editar playlist" aria-hidden="true" />
@@ -80,6 +86,13 @@ export function EditPlaylist({ isOpen, closeModal, playlistId, playlistName, onP
           disabled={loading} // Desabilita o input durante o carregamento
           required
           aria-required="true"
+        />
+
+      <EditPlaylistNameInput
+          type="text"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Descrição da playlist"
         />
       <SaveEditButton onClick={handleEditPlaylist} disabled={loading} aria-live="polite">
       {loading ? 'Salvando...' : 'Salvar Alterações'}
