@@ -96,30 +96,9 @@ Here is an overview of the project structure:
 └── App.js                           # Main application component
 ```
 
+---
+
 ## 💻 Technologies Used
-
-### Frontend (React)
-- **Components**: 
-  - **Header**: Contains the navigation, search bar, and logout button.
-  - **Login**: Handles user login and authentication.
-  - **Playlists**: Displays and manages playlists. It includes a search bar, list of playlists, and functionality for adding songs to playlists.
-  - **Musics**: Displays the songs and handles the logic for adding, editing, and deleting songs.
-  - **Modal**: A reusable modal component for displaying content like song details or playlists.
-  - **Player**: A React player for music playback, with controls for play/pause and volume adjustment.
-
-- **State Management**:
-  - The state is managed using React's `useState` and `useEffect` hooks.
-  - JWT tokens are stored in **localStorage** and used to fetch user-specific data (songs, playlists).
-
-### Backend (Node.js + Express)
-- **Authentication**:
-  - Users authenticate via JWT tokens, which are sent with each request to access protected routes (songs, playlists).
-  - The server validates the token to ensure that requests come from authenticated users.
-
-- **API Endpoints**:
-  - **Songs**: Allows for creating, updating, deleting, and fetching songs.
-  - **Playlists**: Handles creating, updating, and deleting playlists.
-  - **User**: Authenticates users via email and password and issues JWT tokens.
 
 ### Libraries & Tools Used
 - **React**: For the frontend UI.
